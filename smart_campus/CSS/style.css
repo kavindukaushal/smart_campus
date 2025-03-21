@@ -1,0 +1,649 @@
+/*..........................................................................................*/
+/*index.php*/
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('assets/images/canpus.webp');
+    background-size: cover;
+    background-position: center;
+    color: #505081;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header */
+header {
+
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #0F0E47;
+    page: top;
+    
+}
+
+header .logo h1 {
+    font-size: 36px;
+    color: #fff;
+}
+
+
+header .logo p {
+    font-size: 18px;
+    color: #8686AC;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 60px; /* Adjust logo size */
+    height: auto;
+    margin-right: 15px; /* Spacing between logo and text */
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    color: #0F0E47;
+}
+
+header nav ul li {
+    margin-left: 30px;
+}
+
+header nav ul li a {
+    color: #fff;
+    font-weight: 100;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+header nav ul li a:hover {
+    color: #5454de;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 48px;
+    color: #0F0E47;
+    font-weight: 600;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #8686AC;
+    margin: 20px 0;
+}
+
+.cta-btn {
+    background-color: #505081;
+    color: white;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.cta-btn:hover {
+    background-color: #272757;
+}
+
+
+.transparent-box {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    padding: 30px;
+    border-radius: 15px; /* Rounded corners */
+    text-align: center;
+    max-width: 600px; /* Control width */
+    margin: auto; /* Center the box */
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2); /* Soft glow effect */
+}
+
+.hero h2, 
+.hero p, 
+.hero .cta-btn {
+    color: white; /* Ensure text is readable */
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 50%;
+    color: #0F0E47;
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.modal-content p {
+    font-size: 18px;
+    color: #505081;
+}
+
+.close-btn {
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .cta-btn {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+}
+/*..........................................................................................*/
+/* Login Page UI Design */
+.login-container {
+    display: flex;
+    height: 100vh;
+    background: #f4f4f4;
+}
+
+/* Left Side (Logo Section) */
+.login-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0F0E47;
+}
+
+.login-left img {
+    max-width: 70%;
+    height: auto;
+}
+
+/* Right Side (Login Form) */
+.login-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 40px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-right h2 {
+    font-size: 28px;
+    color: #0F0E47;
+    margin-bottom: 20px;
+}
+
+.login-right form {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-right label {
+    font-size: 16px;
+    color: #505081;
+    margin-top: 10px;
+}
+
+.login-right input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #505081;
+}
+
+/* Login Button */
+.login-right button {
+    background: #505081;
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.login-right button:hover {
+    background: #272757;
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    margin-top: 15px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: #0F0E47;
+    font-weight: 600;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/*..........................................................................................*/
+
+
+    /* General Styles */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4f4f4;
+        color: #505081;
+    }
+    
+    h2 {
+        color: #0F0E47;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .button-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .back-button {
+        background-color: #505081;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    
+    .back-button:hover {
+        background-color: #272757;
+    }
+    
+    /* Form Styling */
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 0 auto 40px;
+    }
+    
+    input, select {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+    }
+    
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+        background-color: #505081;
+        color: white;
+        font-weight: bold;
+    }
+    
+    button:hover {
+        background-color: #272757;
+    }
+    
+    /* Table Styling */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+    
+    th {
+        background-color: #0F0E47;
+        color: white;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    
+    /* Action Buttons */
+    .btn-edit, .btn-delete {
+        color: white;
+        background-color: #505081;
+        padding: 8px 16px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    
+    .btn-edit:hover, .btn-delete:hover {
+        background-color: #272757;
+    }
+    
+    .btn-delete {
+        background-color: #e74c3c;
+    }
+    
+    .btn-delete:hover {
+        background-color: #c0392b;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        form {
+            padding: 15px;
+        }
+    
+        table {
+            width: 100%;
+            font-size: 14px;
+        }
+    }
+
+    
+    
+    /*...................................................................................*/
+  
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: black;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+/* Main Layout */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Dashboard Sections */
+.dashboard-section {
+    background:rgb(102, 102, 222);
+    padding: 18px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard-section::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right,rgb(21, 21, 110), #505081);
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.dashboard-section:hover::before {
+    transform: scaleX(1);
+}
+
+.dashboard-section:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 8px 18px rgba(255, 255, 255, 0.2);
+}
+
+
+/* Calendar */
+.calendar-container {
+    width: 55%;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.calendar-container:hover {
+    transform: translateY(-5px);
+}
+
+/* Security Table */
+.security-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.security-table th, .security-table td {
+    padding: 12px;
+    border-bottom: 1px solid #8686AC;
+    text-align: center;
+}
+
+.security-table th {
+    background: #8686AC;
+    color: white;
+}
+
+/* Buttons */
+button {
+    padding: 10px 15px;
+    background: #505081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #8686AC;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .dashboard-container, .calendar-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Today's Details Section */
+.today-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 20%;
+    margin:20;
+}
+
+/* Today's Classes & Events Boxes */
+.today-box {
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Today's Classes Box */
+.today-classes {
+    background: linear-gradient(to right, #505081, #8686AC);
+    color: white;
+    width: 50;
+   
+    
+}
+
+.today-classes:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
+    height: 50;
+    
+   
+}
+
+/* Today's Events Box */
+.today-events {
+    background: linear-gradient(to right, #272757, #0F0E47);
+    color: white;
+    width: 50;
+    height: 50;
+}
+
+.today-events:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Lists Inside the Boxes */
+.today-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.today-box ul li {
+    padding: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+    text-align: center;
+}
+
+/*.........................................................................................................................*/ 
+
+
